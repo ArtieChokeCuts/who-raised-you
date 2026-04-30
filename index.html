@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Who Raised You - Playable Music Video</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111217'/%3E%3Ccircle cx='32' cy='32' r='23' fill='%23e44838'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='15' font-weight='900' fill='white'%3ESUFF%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="stage-shell">
+      <section class="game-frame" aria-label="Who Raised You playable music video">
+        <canvas id="gameCanvas" aria-label="Who Raised You game stage"></canvas>
+
+        <div class="hud hud-top">
+          <div class="brand-stack">
+            <span class="brand">SUFF</span>
+            <span class="cut">ArtieChoke Cuts</span>
+          </div>
+          <div class="hud-tile timer">
+            <span class="hud-label">CLOCK</span>
+            <strong id="timerText">2:19</strong>
+          </div>
+          <div class="hud-tile vibe">
+            <span class="hud-label">VIBE</span>
+            <div class="vibe-track" aria-hidden="true">
+              <span id="vibeFill"></span>
+            </div>
+          </div>
+          <div class="hud-tile distance">
+            <span class="hud-label">DISTANCE</span>
+            <strong id="distanceText">0%</strong>
+          </div>
+        </div>
+
+        <div class="hud hud-bottom">
+          <div class="sector-card">
+            <span id="sectorText">SCHOOLYARD</span>
+            <span id="pressureText">SEARCH</span>
+          </div>
+          <div class="lyric-card" id="lyricCard">
+            <span id="lyricText">WHO RAISED YOU?</span>
+          </div>
+        </div>
+
+        <div class="touch-controls" id="touchControls" aria-label="Touch controls">
+          <div class="touch-cluster move-cluster">
+            <button class="touch-btn" type="button" data-touch="left" aria-label="Move left">&#8592;</button>
+            <button class="touch-btn" type="button" data-touch="right" aria-label="Move right">&#8594;</button>
+          </div>
+          <div class="touch-cluster action-cluster">
+            <button class="touch-btn touch-primary" type="button" data-touch="jump" aria-label="Jump">&#9650;</button>
+            <button class="touch-btn" type="button" data-touch="duck" aria-label="Duck">&#9660;</button>
+          </div>
+        </div>
+
+        <div class="overlay" id="startOverlay">
+          <div class="title-lockup">
+            <span class="eyebrow">Playable Music Video</span>
+            <h1>Who Raised You</h1>
+            <p>Smooth track. Tough neighborhood logic.</p>
+          </div>
+          <div class="character-select" role="radiogroup" aria-label="Character select">
+            <button class="character-card is-selected" type="button" data-character="kid" aria-pressed="true">
+              <span class="portrait kid"></span>
+              <strong>The Kid</strong>
+            </button>
+            <button class="character-card" type="button" data-character="acea" aria-pressed="false">
+              <span class="portrait acea"></span>
+              <strong>Acea</strong>
+            </button>
+            <button class="character-card" type="button" data-character="fixer" aria-pressed="false">
+              <span class="portrait fixer"></span>
+              <strong>The Fixer</strong>
+            </button>
+          </div>
+          <button class="start-button" id="startButton" type="button">START TRACK</button>
+        </div>
+
+        <div class="blackout" id="blackout" aria-live="polite">
+          <span>GAME OVER</span>
+          <strong>THE SONG CUTS AT 2:19</strong>
+          <button id="replayButton" type="button">RUN IT BACK</button>
+        </div>
+
+        <audio id="track" preload="auto" src="assets/who-raisedya-remastered.mp3"></audio>
+      </section>
+    </main>
+
+    <script src="src/game.js"></script>
+  </body>
+</html>
