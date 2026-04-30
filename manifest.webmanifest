@@ -1,0 +1,10 @@
+{
+  "name": "Who Raised You",
+  "short_name": "WhoRaisedYou",
+  "description": "A playable music video dodge-and-trap game.",
+  "start_url": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0d0f12",
+  "theme_color": "#e44838"
+}
